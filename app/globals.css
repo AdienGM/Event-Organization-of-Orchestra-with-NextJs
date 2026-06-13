@@ -1,26 +1,143 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Navy */
+  --navy-300: #8fa3bc;
+  --navy-400: #6b84a0;
+  --navy-600: #1f3a5f;
+  --navy-700: #162d4a;
+  --navy-800: #0e2035;
+  --navy-900: #0a1420;
+  --navy-950: #060e17;
+
+  /* Gold */
+  --gold-200: #f5e8c0;
+  --gold-300: #ebcf7a;
+  --gold-400: #d4a843;
+  --gold-500: #c9a14a;
+  --gold-600: #a8822e;
+  --gold-700: #8b6a1e;
+
+  /* Wine */
+  --wine-600: #7d2233;
+  --wine-700: #6b1b2a;
+
+  /* Ivory */
+  --ivory-50: #fdfcf8;
+  --ivory-100: #f4f1ea;
+  --ivory-200: #eae5d8;
+  --ivory-300: #ddd7c7;
+
+  /* Ink */
+  --ink-700: #3a3530;
+
+  /* Semantic */
+  --success: #3f6f55;
+  --warning: #b9842e;
+  --danger: #9a3344;
+
+  /* Surfaces */
+  --surface-page: #f8f5ee;
+  --surface-card: #ffffff;
+
+  /* Text */
+  --text-primary: #1a1410;
+  --text-secondary: #4a4540;
+  --text-tertiary: #7a736a;
+  --text-accent: #c9a14a;
+
+  /* Borders */
+  --border-default: #d5cfc0;
+  --border-on-dark: rgba(255, 255, 255, 0.15);
+  --hairline-gold: rgba(201, 161, 74, 0.4);
+
+  /* Radius */
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.14), 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 24px 64px rgba(0, 0, 0, 0.18), 0 8px 24px rgba(0, 0, 0, 0.1);
+  --shadow-gold: 0 4px 20px rgba(201, 161, 74, 0.35);
+
+  /* Motion */
+  --dur-fast: 120ms;
+  --dur-base: 220ms;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-entrance: cubic-bezier(0, 0, 0.2, 1);
+
+  /* Layout */
+  --container-max: 1280px;
+  --container-narrow: 760px;
+  --gutter: clamp(20px, 4vw, 80px);
+
+  /* Type scale */
+  --text-display-sm: clamp(2rem, 4vw, 3rem);
+  --text-h3: clamp(1.25rem, 2vw, 1.5rem);
+  --text-body: 1rem;
+  --text-body-lg: 1.125rem;
+  --text-caption: 0.8125rem;
+
+  /* Font families — fallbacks, overridden by next/font classes on <html> */
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-serif: 'Times New Roman', serif;
+  --font-sans: system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--surface-page);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* Utility classes used by design system components */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.ph-flourish {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.ph-rule {
+  border: none;
+  border-top: 1px solid var(--hairline-gold);
+  margin: 0;
+}
+
+@keyframes kit-fade {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
