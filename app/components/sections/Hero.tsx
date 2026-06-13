@@ -55,7 +55,7 @@ export function Hero({ onExplore, onSubscribe }: HeroProps) {
               color: "var(--ivory-50)",
             }}
           >
-            The 2027 Season
+            The 2026 Season
             <br />
             <span style={{ fontStyle: "italic", color: "var(--gold-400)" }}>
               Romantic Splendour
